@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Sandy Salas",
   "license": "ISC",
+  "type": "module",
   "description": "",
-  "scripts": {}
-
+  "scripts": {},
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.3"
+  }
 }
