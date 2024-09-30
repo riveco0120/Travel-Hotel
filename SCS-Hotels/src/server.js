@@ -6,7 +6,7 @@ import morgan from 'morgan';
 
 import authRouter from './routes/auth.routes.js';
 import './database/connection.js'
-import {User, } from './database/models/uses.model.js'
+import {User, } from './database/models/user.model.js'
 
 
 async function main(){ 

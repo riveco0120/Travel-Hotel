@@ -11,12 +11,16 @@ const User = connection.define(
         type:DataTypes.STRING,
         unique:true,
       },
-      password:{
-        type:DataTypes.STRING
+      password:DataTypes.STRING,
+      giveName:DataTypes.STRING,
+      lastNAme:DataTypes.STRING,
+      phoneNumber : {
+        type:DataTypes.STRING(15), 
+        unique:true,
+        allowNull:true
       },
-      name:{
-        type:DataTypes.STRING
-      }
+      address:DataTypes.STRING
+    
 
     },
     {
