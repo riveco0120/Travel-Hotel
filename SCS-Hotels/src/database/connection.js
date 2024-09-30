@@ -11,7 +11,7 @@ const connection = new Sequelize({
 
 try{ 
     connection
-    .authenticate
+    .authenticate()
     .then(()=> console.log("Conectado a la base de dato"))
 }catch(err){
     console.error(err)
