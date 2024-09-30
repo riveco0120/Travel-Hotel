@@ -5,7 +5,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import authRouter from './routes/auth.routes.js';
-
+import './database/connection.js'
 function main(){ 
     const port = +process.env.APP_PORT ?? 4000; 
     const app = express(); 
