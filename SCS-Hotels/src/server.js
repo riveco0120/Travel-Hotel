@@ -6,7 +6,7 @@ import morgan from 'morgan';
 
 import authRouter from './routes/auth.routes.js';
 import './database/connection.js'
-import {User, } from './database/models/uses.model.js'
+import {user, } from './database/models/uses.model.js'
 
 
 function main(){ 
@@ -20,7 +20,14 @@ function main(){
         res.send('Hola mundo!');
     })
 
-    
+    user.create({
+        id:"10000",
+        email:"correo@gmail.com",
+        password:"12345",
+        name :"Sandy salas"
+    }).then(()=>{
+        console.log("Usuario Creado")
+    })
 
     app.use('/auth',authRouter)
     

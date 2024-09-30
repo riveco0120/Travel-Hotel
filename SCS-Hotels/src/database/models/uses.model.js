@@ -1,4 +1,4 @@
-import { connection, Connection, } from "../connection.js";
+import { connection, } from "../connection.js";
 import {DataTypes} from 'sequelize'
 const user = connection.define(
     'users',
@@ -24,7 +24,7 @@ const user = connection.define(
     }
 )
 user.sync({
-    force:true
+    //force:true
 });
 
 export {user,}
