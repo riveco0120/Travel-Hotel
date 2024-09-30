@@ -6,6 +6,9 @@ import morgan from 'morgan';
 
 import authRouter from './routes/auth.routes.js';
 import './database/connection.js'
+import {User, } from './database/models/uses.model.js'
+
+
 function main(){ 
     const port = +process.env.APP_PORT ?? 4000; 
     const app = express(); 
@@ -16,6 +19,8 @@ function main(){
     app.get('/',(req,res) =>{
         res.send('Hola mundo!');
     })
+
+    
 
     app.use('/auth',authRouter)
     

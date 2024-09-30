@@ -16,3 +16,5 @@ try{
 }catch(err){
     console.error(err)
 }
+
+export {connection,};
