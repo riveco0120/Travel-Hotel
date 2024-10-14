@@ -1,5 +1,5 @@
 import {User, } from './user.model.js'
 
 export {
-     User,
+     User,//todos los modelos
 };
