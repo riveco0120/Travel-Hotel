@@ -16,7 +16,8 @@
     "express": "^4.21.0",
     "mysql2": "^3.11.3",
     "pg": "^8.13.0",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
