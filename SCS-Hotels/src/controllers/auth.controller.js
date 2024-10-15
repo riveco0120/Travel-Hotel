@@ -11,11 +11,13 @@ export async function signup(req, res){
   const {
     email,
     password,
-    givenName,
-    lastName,
+    giveName,
+    lastNAme,
+    phoneNumber,
+    address
   } = req.body;
 
-  const requiredFilsd =['email','password','givenName','lastName']; 
+  const requiredFilsd =['email','password','giveName','lastNAme','phoneNumber','address']; 
   for(const field of requiredFilsd){
     if(!req.body[field])return res
       .status(401)
@@ -51,8 +53,10 @@ const passwordHash = await hashPassword(password)
 const created = await User.create({
   email,
   password: passwordHash,
-  givenName,
-  lastName
+  giveName,
+  lastNAme,
+  phoneNumber,
+  address
 }); 
 
 if(!created) return res
