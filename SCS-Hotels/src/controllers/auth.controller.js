@@ -14,13 +14,16 @@ export function signup(req, res){
     lastName,
   } = req.body;
 
-  if(!email || !password || givenName || lastName){
-    return res
-    .status(401)
-    .json({
-      success:false,
-      message:"Faltan Campos Requeridos"
+  const requiredFilsd =['email','password','givenName','lastName']; 
+  for(const field of requiredFilsd){
+    if(!req.body[field]){
+      return res
+      .status(401)
+      .json({
+        success:false,
+      message:"Faltan Campos Requeridos" 
     })
   }
+}
     res.send('POST SEGNUP')   
 }
