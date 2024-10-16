@@ -27,6 +27,13 @@ export async function signup(req, res){
     })
 }
 
+if(!email.includes('@') || !email.includes('.'))return res
+.status(400)
+.json({
+  success:false,
+message:"El correo es invalido"
+})
+
 if(password.leng<8)return res
   .status(401)
   .json({
@@ -46,7 +53,6 @@ if(user) return res
     success:false,
   message:"El usuario ya existe"
 })
-
 
 const passwordHash = await hashPassword(password)
 
