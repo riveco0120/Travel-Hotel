@@ -7,6 +7,40 @@ export function login(req, res){
   res.send('POST LOGIN')
 }
 
+export async function createLogin(req,res){
+  const { 
+    email,
+    password
+  } = req.address
+
+  if(!email || !password)return res
+      .status(401)
+      .json({
+        success:false,
+      message:"El correo la contraseña es incorrecta" 
+    })
+
+    const user = await User.findOne({
+      where:{
+        email,
+      }
+    })
+
+    if(!User)return res
+      .status(401)
+      .json({
+        success:false,
+        message:"El Usuario no existe" 
+      })
+
+      if(!verifyPassword(password,user.password))return res
+      .status(401)
+      .json({
+        success:false,
+        message:"Contraseña incorrecta" 
+      })
+}
+
 export async function signup(req, res){
   const {
     email,
