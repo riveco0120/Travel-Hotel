@@ -28,17 +28,6 @@ async function main(){
     },
    }); 
 
- //  if(!usserExists){
-   // await User.create({
-    //    id:"10000",
-      //  email:"correo@gmail.com",
-       // password:"12345",
-        //name :"Sandy salas"
- //   }).then(()=>{
-   //     console.log("Usuario Creado")
-   // });
-   //} 
-
     app.use('/auth',authRouter)
     
     httpServer.listen(port, ()=> {

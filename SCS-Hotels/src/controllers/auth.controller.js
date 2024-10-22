@@ -3,15 +3,11 @@ import {
   User,
 } from '../database/models/index.js'
 
-export function login(req, res){
-  res.send('POST LOGIN')
-}
-
-export async function createLogin(req,res){
+export async function login(req,res){
   const { 
     email,
     password
-  } = req.address
+  } = req.body;
 
   if(!email || !password)return res
       .status(401)
@@ -32,13 +28,28 @@ export async function createLogin(req,res){
         success:false,
         message:"El Usuario no existe" 
       })
+    
+      const passwordVerified = await verifyPassword(password, user.password)
 
-      if(!verifyPassword(password,user.password))return res
+      if(!passwordVerified)return res
       .status(401)
       .json({
         success:false,
         message:"Contraseña incorrecta" 
       })
+
+      const token = '1313596124qwertyjuxj'
+
+      return res 
+      .status(200).
+      json({
+        success : true,
+        data:{
+          token,
+          expiresIn : 1000 * 60 *60
+        },
+      });
+    
 }
 
 export async function signup(req, res){

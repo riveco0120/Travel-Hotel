@@ -6,7 +6,7 @@ export async function hashPassword(plain){
     return encrypt;
 }
 
-export async function verifyPassword(palin, hash){
+export async function verifyPassword(plain, hash){
     const verified = await compare(plain, hash)
     return verified; 
 }
